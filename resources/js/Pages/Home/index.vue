@@ -66,10 +66,10 @@
             href="/portfolio"
             class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-amber text-[#1a0f08] font-mono text-[12px] font-semibold uppercase tracking-[0.1em] transition-all hover:bg-amber-soft hover:translate-x-0.5"
           >View portfolio <span>→</span></Link>
-          <a
-            :href="`mailto:${personalInfo.email}`"
+          <Link
+            href="/services"
             class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border bg-surface font-mono text-[12px] text-text-2 transition-colors hover:text-text hover:border-border-hi hover:bg-surface-hi"
-          >Get in touch ↗</a>
+          >Services ↗</Link>
         </div>
 
         <!-- Quick stats strip -->

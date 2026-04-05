@@ -26,6 +26,10 @@
             href="/portfolio"
             class="px-3 py-1.5 rounded-full text-text-2 transition-colors hover:text-text hover:bg-surface"
           >Portfolio</Link>
+          <Link
+            href="/services"
+            class="px-3 py-1.5 rounded-full text-text-2 transition-colors hover:text-text hover:bg-surface"
+          >Services</Link>
         </template>
       </div>
 
@@ -76,6 +80,11 @@
           @click="open = false"
           class="block px-3 py-2.5 font-mono text-[13px] text-text-2 rounded-lg transition-colors hover:text-text hover:bg-surface"
         >Portfolio</Link>
+        <Link
+          href="/services"
+          @click="open = false"
+          class="block px-3 py-2.5 font-mono text-[13px] text-text-2 rounded-lg transition-colors hover:text-text hover:bg-surface"
+        >Services</Link>
       </template>
     </div>
   </nav>
