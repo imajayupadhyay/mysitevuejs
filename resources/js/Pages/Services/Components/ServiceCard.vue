@@ -143,6 +143,39 @@ const icons = {
   cloud: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
     h('path', { d: 'M7 17a4 4 0 010-8 5 5 0 019.6-1.3A4 4 0 0117 17H7z' }),
   ]),
+  aws: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('path', { d: 'M4 8l8-4 8 4-8 4-8-4z' }),
+    h('path', { d: 'M4 12l8 4 8-4' }),
+    h('path', { d: 'M4 16l8 4 8-4' }),
+  ]),
+  azure: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('path', { d: 'M8 4l-6 14h6l3-6-3-8z' }),
+    h('path', { d: 'M12 4l10 16H11l-2-4 3-12z' }),
+  ]),
+  lambda: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('path', { d: 'M13 2L4 14h6l-2 8 11-14h-7l1-6z' }),
+  ]),
+  cicd: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('path', { d: 'M21 12a9 9 0 01-15 6.7L3 16' }),
+    h('path', { d: 'M3 12a9 9 0 0115-6.7L21 8' }),
+    h('path', { d: 'M3 4v4h4M21 20v-4h-4' }),
+  ]),
+  monitor: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('rect', { x: 3, y: 4, width: 18, height: 13, rx: 2 }),
+    h('path', { d: 'M7 12l3-3 3 3 4-4' }),
+    h('line', { x1: 8, y1: 21, x2: 16, y2: 21 }),
+    h('line', { x1: 12, y1: 17, x2: 12, y2: 21 }),
+  ]),
+  web: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('circle', { cx: 12, cy: 12, r: 9 }),
+    h('path', { d: 'M3 12h18' }),
+    h('path', { d: 'M12 3c3 3 4.5 6 4.5 9s-1.5 6-4.5 9c-3-3-4.5-6-4.5-9s1.5-6 4.5-9z' }),
+  ]),
+  ai: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
+    h('path', { d: 'M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z' }),
+    h('path', { d: 'M19 15l.6 1.8L21 17.5l-1.4.7L19 20l-.6-1.8L17 17.5l1.4-.7L19 15z' }),
+    h('path', { d: 'M5 17l.5 1.4L7 19l-1.5.6L5 21l-.5-1.4L3 19l1.5-.6L5 17z' }),
+  ]),
   k8s: () => h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', 'stroke-width': 1.6, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, [
     h('polygon', { points: '12,3 20,7 20,15 12,21 4,15 4,7' }),
     h('circle', { cx: 12, cy: 12, r: 2.5 }),

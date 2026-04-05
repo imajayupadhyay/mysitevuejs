@@ -23,13 +23,16 @@
         </template>
         <template v-else>
           <Link
-            href="/portfolio"
-            class="px-3 py-1.5 rounded-full text-text-2 transition-colors hover:text-text hover:bg-surface"
-          >Portfolio</Link>
-          <Link
-            href="/services"
-            class="px-3 py-1.5 rounded-full text-text-2 transition-colors hover:text-text hover:bg-surface"
-          >Services</Link>
+            v-for="l in pageLinks"
+            :key="l.href"
+            :href="l.href"
+            :class="[
+              'px-3 py-1.5 rounded-full transition-colors',
+              isActive(l.href)
+                ? 'text-amber bg-surface'
+                : 'text-text-2 hover:text-text hover:bg-surface',
+            ]"
+          >{{ l.label }}</Link>
         </template>
       </div>
 
@@ -39,11 +42,12 @@
         href="#contact"
         class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber text-[#1a0f08] font-mono text-[12px] font-semibold transition-all hover:bg-amber-soft hover:translate-x-0.5"
       >Get in touch <span>↗</span></a>
-      <Link
+      <button
         v-else
-        href="/portfolio"
+        type="button"
+        @click="contactOpen = true"
         class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber text-[#1a0f08] font-mono text-[12px] font-semibold transition-all hover:bg-amber-soft hover:translate-x-0.5"
-      >View work <span>↗</span></Link>
+      >Get in touch <span>↗</span></button>
 
       <!-- Mobile toggle -->
       <button
@@ -76,26 +80,32 @@
       </template>
       <template v-else>
         <Link
-          href="/portfolio"
+          v-for="l in pageLinks"
+          :key="l.href"
+          :href="l.href"
           @click="open = false"
-          class="block px-3 py-2.5 font-mono text-[13px] text-text-2 rounded-lg transition-colors hover:text-text hover:bg-surface"
-        >Portfolio</Link>
-        <Link
-          href="/services"
-          @click="open = false"
-          class="block px-3 py-2.5 font-mono text-[13px] text-text-2 rounded-lg transition-colors hover:text-text hover:bg-surface"
-        >Services</Link>
+          :class="[
+            'block px-3 py-2.5 font-mono text-[13px] rounded-lg transition-colors',
+            isActive(l.href)
+              ? 'text-amber bg-surface'
+              : 'text-text-2 hover:text-text hover:bg-surface',
+          ]"
+        >{{ l.label }}</Link>
       </template>
     </div>
   </nav>
+
+  <ContactModal :show="contactOpen" @close="contactOpen = false" />
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
+import ContactModal from '@/Components/Global/ContactModal.vue';
 
 const page = usePage();
 const open = ref(false);
+const contactOpen = ref(false);
 
 const isPortfolio = computed(() => page.url.startsWith('/portfolio'));
 const logo = '/logo.svg';
@@ -106,4 +116,16 @@ const portfolioLinks = [
   { label: 'Certs', href: '#certs' },
   { label: 'Contact', href: '#contact' },
 ];
+
+const pageLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Services', href: '/services' },
+];
+
+function isActive(href) {
+  const url = page.url.split('?')[0].split('#')[0];
+  if (href === '/') return url === '/' || url === '';
+  return url === href || url.startsWith(href + '/');
+}
 </script>

@@ -90,7 +90,7 @@
         <p class="font-display text-[clamp(17px,2vw,26px)] leading-[1.35] tracking-[-0.01em] text-text max-w-[40ch]">
           I'm <span class="text-amber">Ajay</span> — a DevOps &amp; Cloud Engineer shipping
           multi-cloud infrastructure, CI/CD pipelines, and observability for
-          <span class="text-text-2">production systems that can't blink.</span> Three years
+          <span class="text-text-2">production systems that can't blink.</span> Four years
           in, four certifications deep, and still genuinely enjoying it.
         </p>
         <div class="relative sm:absolute sm:bottom-[22px] sm:left-[30px] sm:right-[30px] mt-5 sm:mt-0 flex items-center justify-between gap-2 font-mono text-[10px] sm:text-[11px] text-text-3 border-t border-dashed border-border pt-4">
@@ -143,7 +143,7 @@
       <MiniStat value="50+" label="AWS Projects" color="amber" class="col-span-3 md:col-span-3" />
       <MiniStat value="60+" label="Azure Loads" color="sky" class="col-span-3 md:col-span-3" />
       <MiniStat value="30%" label="Cost Saved" color="lime" class="col-span-3 md:col-span-3" />
-      <MiniStat value="3+" label="Years" color="coral" class="col-span-3 md:col-span-3" />
+      <MiniStat value="4+" label="Years" color="coral" class="col-span-3 md:col-span-3" />
 
       <!-- CTA -->
       <a

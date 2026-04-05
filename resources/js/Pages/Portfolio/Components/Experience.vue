@@ -7,7 +7,7 @@
           Field <span class="italic text-text-2 font-normal">log.</span>
         </h2>
       </div>
-      <div class="hidden sm:block font-mono text-[11px] text-text-3 uppercase tracking-[0.1em] whitespace-nowrap">3 Posts · 3+ Years</div>
+      <div class="hidden sm:block font-mono text-[11px] text-text-3 uppercase tracking-[0.1em] whitespace-nowrap">3 Posts · 4+ Years</div>
     </div>
 
     <div class="grid gap-3.5">

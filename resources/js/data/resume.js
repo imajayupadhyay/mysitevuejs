@@ -10,7 +10,7 @@ export const personalInfo = {
 };
 
 export const stats = [
-  { label: 'YRS EXP', value: '3+' },
+  { label: 'YRS EXP', value: '4+' },
   { label: 'UPTIME SLA', value: '99.9%' },
   { label: 'COST SAVED', value: '30%' },
   { label: 'CERTIFICATIONS', value: '4' },
