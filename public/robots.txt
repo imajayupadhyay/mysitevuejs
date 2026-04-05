@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /_debugbar/
+
+Sitemap: https://ajayupadhyay.com/sitemap.xml
