@@ -115,21 +115,24 @@
 
           <div class="font-mono text-[11px] mt-3.5 min-h-4">
             <span v-if="status === 'error'" class="text-coral">{{ errorMessage }}</span>
-            <span v-if="status === 'success'" class="text-lime">Thanks! I'll get back to you soon.</span>
           </div>
         </form>
       </div>
     </div>
+
+    <SuccessModal :show="showSuccessModal" @close="showSuccessModal = false" />
   </section>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 import axios from 'axios';
+import SuccessModal from '@/Components/Global/SuccessModal.vue';
 
 const form = ref({ name: '', email: '', phone: '', message: '' });
 const status = ref('idle');
 const errorMessage = ref(null);
+const showSuccessModal = ref(false);
 
 const btnLabel = computed(() => {
   if (status.value === 'sending') return 'Sending...';
@@ -147,6 +150,7 @@ async function handleSubmit() {
     await axios.post('/contact', form.value);
     status.value = 'success';
     form.value = { name: '', email: '', phone: '', message: '' };
+    showSuccessModal.value = true;
     setTimeout(() => { status.value = 'idle'; }, 4000);
   } catch (err) {
     status.value = 'error';

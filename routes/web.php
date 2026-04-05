@@ -20,8 +20,7 @@ Route::post('/contact', function (Request $request) {
         'message' => 'required|string|max:5000',
     ]);
 
-    // Log or email the message here as needed
-    \Illuminate\Support\Facades\Log::info('Contact form submission', $validated);
+    \App\Models\ContactMessage::create($validated);
 
     return response()->json(['success' => true]);
 });
