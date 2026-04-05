@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 48" fill="none">
+  <defs>
+    <linearGradient id="amber-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff9544"/>
+      <stop offset="100%" stop-color="#ff5d73"/>
+    </linearGradient>
+    <linearGradient id="name-grad" x1="70" y1="0" x2="190" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff9544"/>
+      <stop offset="100%" stop-color="#ffb27a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- AU monogram box (same as favicon) -->
+  <rect width="48" height="48" rx="12" fill="#0a0a0f"/>
+  <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="11.25" stroke="url(#amber-grad)" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text
+    x="24" y="33"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="800"
+    font-size="22"
+    letter-spacing="-1"
+    fill="url(#amber-grad)"
+  >AU</text>
+
+  <!-- Vertical divider -->
+  <line x1="62" y1="9" x2="62" y2="39" stroke="#26262f" stroke-width="1"/>
+
+  <!-- Ajay — top, large, gradient -->
+  <text
+    x="74" y="23"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="800"
+    font-size="19"
+    letter-spacing="-0.5"
+    fill="url(#name-grad)"
+  >Ajay</text>
+
+  <!-- Upadhyay — bottom, smaller, muted -->
+  <text
+    x="75" y="39"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-weight="500"
+    font-size="11.5"
+    letter-spacing="1.2"
+    fill="#9c978b"
+  >UPADHYAY</text>
+</svg>

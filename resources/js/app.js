@@ -1,0 +1,18 @@
+import './bootstrap';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { MotionPlugin } from '@vueuse/motion';
+
+createInertiaApp({
+    resolve: name => {
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
+        // Support both Pages/Foo.vue and Pages/Foo/index.vue
+        return pages[`./Pages/${name}.vue`] || pages[`./Pages/${name}/index.vue`];
+    },
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .use(MotionPlugin)
+            .mount(el);
+    },
+});
