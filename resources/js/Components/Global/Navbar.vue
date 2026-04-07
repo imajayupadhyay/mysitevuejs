@@ -13,37 +13,21 @@
 
       <!-- Desktop links -->
       <div class="hidden md:flex items-center gap-1 font-mono text-[12px]">
-        <template v-if="isPortfolio">
-          <a
-            v-for="l in portfolioLinks"
-            :key="l.href"
-            :href="l.href"
-            class="px-3 py-1.5 rounded-full text-text-2 transition-colors hover:text-text hover:bg-surface"
-          >{{ l.label }}</a>
-        </template>
-        <template v-else>
-          <Link
-            v-for="l in pageLinks"
-            :key="l.href"
-            :href="l.href"
-            :class="[
-              'px-3 py-1.5 rounded-full transition-colors',
-              isActive(l.href)
-                ? 'text-amber bg-surface'
-                : 'text-text-2 hover:text-text hover:bg-surface',
-            ]"
-          >{{ l.label }}</Link>
-        </template>
+        <Link
+          v-for="l in pageLinks"
+          :key="l.href"
+          :href="l.href"
+          :class="[
+            'px-3 py-1.5 rounded-full transition-colors',
+            isActive(l.href)
+              ? 'text-amber bg-surface'
+              : 'text-text-2 hover:text-text hover:bg-surface',
+          ]"
+        >{{ l.label }}</Link>
       </div>
 
       <!-- CTA -->
-      <a
-        v-if="isPortfolio"
-        href="#contact"
-        class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber text-[#1a0f08] font-mono text-[12px] font-semibold transition-all hover:bg-amber-soft hover:translate-x-0.5"
-      >Get in touch <span>↗</span></a>
       <button
-        v-else
         type="button"
         @click="contactOpen = true"
         class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-amber text-[#1a0f08] font-mono text-[12px] font-semibold transition-all hover:bg-amber-soft hover:translate-x-0.5"
@@ -69,29 +53,18 @@
       :enter="{ opacity: 1, y: 0, transition: { duration: 200 } }"
       class="md:hidden mt-2 rounded-2xl border border-border bg-[rgba(17,17,24,0.94)] backdrop-blur-[16px] p-3"
     >
-      <template v-if="isPortfolio">
-        <a
-          v-for="l in portfolioLinks"
-          :key="l.href"
-          :href="l.href"
-          @click="open = false"
-          class="block px-3 py-2.5 font-mono text-[13px] text-text-2 rounded-lg transition-colors hover:text-text hover:bg-surface"
-        >{{ l.label }}</a>
-      </template>
-      <template v-else>
-        <Link
-          v-for="l in pageLinks"
-          :key="l.href"
-          :href="l.href"
-          @click="open = false"
-          :class="[
-            'block px-3 py-2.5 font-mono text-[13px] rounded-lg transition-colors',
-            isActive(l.href)
-              ? 'text-amber bg-surface'
-              : 'text-text-2 hover:text-text hover:bg-surface',
-          ]"
-        >{{ l.label }}</Link>
-      </template>
+      <Link
+        v-for="l in pageLinks"
+        :key="l.href"
+        :href="l.href"
+        @click="open = false"
+        :class="[
+          'block px-3 py-2.5 font-mono text-[13px] rounded-lg transition-colors',
+          isActive(l.href)
+            ? 'text-amber bg-surface'
+            : 'text-text-2 hover:text-text hover:bg-surface',
+        ]"
+      >{{ l.label }}</Link>
     </div>
   </nav>
 
@@ -99,7 +72,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
 import ContactModal from '@/Components/Global/ContactModal.vue';
 
@@ -107,15 +80,7 @@ const page = usePage();
 const open = ref(false);
 const contactOpen = ref(false);
 
-const isPortfolio = computed(() => page.url.startsWith('/portfolio'));
 const logo = '/logo.svg';
-
-const portfolioLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Certs', href: '#certs' },
-  { label: 'Contact', href: '#contact' },
-];
 
 const pageLinks = [
   { label: 'Home', href: '/' },
