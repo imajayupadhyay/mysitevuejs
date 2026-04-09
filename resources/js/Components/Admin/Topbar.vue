@@ -58,7 +58,7 @@ import { usePage, router } from '@inertiajs/vue3';
 defineEmits(['toggle-sidebar']);
 
 const page = usePage();
-const admin = computed(() => page.props.admin);
+const admin = computed(() => page.props.authAdmin);
 const adminInitial = computed(() => admin.value?.name?.charAt(0)?.toUpperCase() ?? 'A');
 
 function logout() {

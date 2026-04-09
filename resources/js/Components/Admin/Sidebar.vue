@@ -94,7 +94,7 @@ defineProps({ open: Boolean });
 defineEmits(['close']);
 
 const page = usePage();
-const admin = computed(() => page.props.admin);
+const admin = computed(() => page.props.authAdmin);
 const adminInitial = computed(() => admin.value?.name?.charAt(0)?.toUpperCase() ?? 'A');
 
 function isActive(href) {
@@ -117,6 +117,13 @@ const navItems = [
     href: '/admin/contacts',
     icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
       <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+    </svg>`,
+  },
+  {
+    label: 'Users',
+    href: '/admin/users',
+    icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+      <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
     </svg>`,
   },
 ];
