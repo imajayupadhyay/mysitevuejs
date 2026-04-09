@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
+use App\Mail\ContactMessageReceived;
+use App\Mail\ServiceInquiryReceived;
 
 Route::get('/', function () {
     return Inertia::render('Home');
@@ -28,7 +31,14 @@ Route::post('/service-inquiry', function (Request $request) {
         'details'  => 'required|string|max:5000',
     ]);
 
-    \App\Models\ServiceInquiry::create($validated);
+    $inquiry = \App\Models\ServiceInquiry::create($validated);
+
+    try {
+        Mail::to(config('mail.admin_notification_email'))
+            ->send(new ServiceInquiryReceived($inquiry));
+    } catch (\Throwable $e) {
+        \Log::error('Service inquiry mail failed: ' . $e->getMessage());
+    }
 
     return response()->json(['success' => true]);
 });
@@ -41,7 +51,14 @@ Route::post('/contact', function (Request $request) {
         'message' => 'required|string|max:5000',
     ]);
 
-    \App\Models\ContactMessage::create($validated);
+    $contact = \App\Models\ContactMessage::create($validated);
+
+    try {
+        Mail::to(config('mail.admin_notification_email'))
+            ->send(new ContactMessageReceived($contact));
+    } catch (\Throwable $e) {
+        \Log::error('Contact mail failed: ' . $e->getMessage());
+    }
 
     return response()->json(['success' => true]);
 });
