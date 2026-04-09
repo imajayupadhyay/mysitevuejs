@@ -1,5 +1,6 @@
 *.log
 CLAUDE.md
+session.md
 .DS_Store
 .env
 .env.backup
