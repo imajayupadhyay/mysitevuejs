@@ -22,7 +22,6 @@
     <TechMarquee />
     <div class="relative z-[1] max-w-[1240px] mx-auto px-4 sm:px-7">
       <Capabilities />
-      <Highlights />
       <CertStrip />
       <ContactCTA />
     </div>
@@ -36,7 +35,6 @@ import BackgroundLayer from '@/Components/Global/BackgroundLayer.vue';
 import Hero from './Components/Hero.vue';
 import TechMarquee from './Components/TechMarquee.vue';
 import Capabilities from './Components/Capabilities.vue';
-import Highlights from './Components/Highlights.vue';
 import CertStrip from './Components/CertStrip.vue';
 import ContactCTA from './Components/ContactCTA.vue';
 

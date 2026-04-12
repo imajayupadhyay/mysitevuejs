@@ -9,7 +9,7 @@
     >
       <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full border border-border bg-surface font-mono text-[11px] text-text-2">
         <span class="w-1.5 h-1.5 rounded-full bg-lime shadow-[0_0_10px_#c8ff4d] animate-pulse-amber" />
-        <span>Available for new roles</span>
+        <span>Open to collaborate</span>
       </div>
       <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-text-3 whitespace-nowrap">New Delhi</span>
       <span class="text-border-hi font-mono text-[10px]">·</span>
